@@ -1,0 +1,246 @@
+/* 
+*{
+    } criando reset no estilo padrão p evitar espaçamentos inesperados 
+*/
+
+* {
+    margin: 0;
+    /*MARGIN: 0 =  Essa declaração CSS é frequentemente usada para redefinir as margens padrão aplicadas
+    pelo navegador. O objetivo é garantir que não haja espaçamento indesejado ao redor do elemento.
+    Isso é comumente utilizado em conjunção com o seletor universal (*) para aplicar essa redefinição
+    a todos os elementos na página*/
+    padding: 0;
+    /*Padding: 0= Assim como com margin: 0;, definir padding: 0; é comumente usado para redefinir qualquer
+    preenchimento padrão que os navegadores aplicam a certos elementos. Isso pode ser útil quando você 
+    deseja ter mais controle sobre o layout da página e garantir que não haja espaçamento interno 
+    indesejado em torno dos elementos.*/
+    box-sizing: border-box;
+    /*A propriedade box-sizing é utilizada em CSS para determinar como o modelo de 
+    caixa de um elemento é calculado, ou seja, como a largura e a altura do elemento são calculadas e se 
+    incluem ou não as bordas e o preenchimento. Quando você define box-sizing: border-box; 
+    está especificando que a largura e a altura do elemento incluem o conteúdo, o preenchimento e a borda, 
+    mas não a margem. */
+}
+
+/*endereço das fonts: fontes.google.com (google fontes)*/
+
+header, /*estilizando as fontes dos titulos e subtitulos do site*/
+section h2,
+section h3,
+form button{
+    font-family: 'Bungee', cursive;
+    font-weight: normal;
+}
+
+body,
+input,
+textarea{ /*estilizando todas as fontes que estão dentro da tag <body>*/
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    padding: 16px 0;
+    /*Isso significa que qualquer elemento <header> em seu documento 
+    terá um espaçamento interno de 16 pixels no topo e na parte inferior, 
+    proporcionando um espaçamento visual ao redor do conteúdo dentro do cabeçalho, 
+    enquanto não terá espaçamento interno nas laterais..*/
+    background-color: #182C61;
+    /*cor de fundo do cabeçalho*/
+    color: #ecf0f1;
+    /*cor do texto do cabeçalho*/
+}
+
+/*Agora vamos estilizar o menu <nav>*/
+
+header nav li {
+    display: inline;
+    /*Esta regra faz com que os elementos da lista (<li>) 
+    dentro da barra de navegação (<nav>) dentro do cabeçalho (<header>)
+    sejam exibidos em linha, um ao lado do outro.*/
+    margin-left: 16px;
+    /* Define uma margem à esquerda de 16 pixels para cada elemento de lista. 
+    Isso cria um espaçamento entre os itens da lista.*/
+    font-size: 18px;
+    /* Define o tamanho da fonte para os textos dentro dos elementos de lista (<li>) como 24 pixels.*/
+}
+
+/*Adicionando cor ao texto dos links <a> que é um item <li> do menu <nav> do cabeçalho <header>*/
+
+header nav li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    /*Removendo os underlines dos links <a>*/
+}
+
+/*Estilizando o container*/
+
+.container {
+    /*É um seletor de classe, indicando que a regra se aplica a elementos que possuem a 
+    classe "container".*/
+    max-width: 1024px;
+    /* Define a largura máxima do contêiner como 1280 pixels. Isso significa que o 
+    contêiner não ficará mais largo do que 1024 pixels, mesmo se a largura da tela for maior*/
+    width: 100%;
+    /*Define a largura do contêiner como 100% da largura do contêiner pai. Isso faz com que 
+    o contêiner se ajuste à largura do seu contêiner pai, tornando-o responsivo. 
+    Se o contêiner pai tiver uma largura menor que 1024 pixels, o contêiner com a 
+    classe "container" terá a largura do contêiner pai.*/
+    margin: 0 auto;
+    /*Define as margens superior e inferior como 0 e as margens esquerda e direita 
+    como automáticas. Isso centraliza o contêiner horizontalmente na página. A propriedade auto no 
+    lado direito e esquerdo é o que efetivamente centraliza o elemento.*/
+}
+
+/*colocando o título do site e o menu lado a lado*/
+
+header .container {
+    display: flex;
+    /* Define o modelo de layout flexível para o elemento, permitindo que seus 
+    filhos se comportem como itens flexíveis. O uso de Flexbox oferece maior controle sobre o 
+    layout dos elementos filhos*/
+    align-items: center;
+    /*Alinha os itens flexíveis verticalmente no centro do contêiner. Neste 
+    contexto, os itens referem-se aos elementos dentro do contêiner com a classe "container".*/
+    justify-content: space-between;
+    /* Distribui o espaço disponível ao longo do eixo principal 
+    (horizontal, no caso do layout flexível) de forma que os itens estejam espaçados uniformemente, 
+    com o primeiro item no início do contêiner e o último no final.*/
+
+    /*Resumo: Essa combinação de propriedades Flexbox é frequentemente usada em layouts de 
+    cabeçalho para centralizar verticalmente os elementos do cabeçalho e colocar elementos em 
+    extremidades opostas horizontalmente, criando uma aparência balanceada. 
+    O alinhamento e distribuição de espaço oferecidos pelo Flexbox são úteis para criar layouts 
+    flexíveis e responsivos.*/
+}
+
+.brands-list img {
+    /* Este é um seletor de classe e tipo que indica que a regra se 
+    aplica a elementos <img> que estão dentro de elementos com a classe "brands-list".*/
+    height: 24px; /*Define a altura dos elementos <img> para 24 pixels.*/
+    margin-right: 10px; /*definindo o espaçamento entre as logos*/
+
+    /*Resumo: Portanto, esta regra CSS é usada para garantir que todas as imagens dentro de elementos com a 
+    classe "brands-list" tenham uma altura fixa de 24 pixels. Isso é comum quando você deseja 
+    uniformizar o tamanho de várias imagens de marcas (logotipos, por exemplo) em seu site. 
+    A propriedade height está sendo usada para controlar a altura da imagem sem afetar sua largura, 
+    mantendo a proporção original.*/
+}
+
+.brands-list li {
+    /*Este é um seletor que indica que a regra se aplica a elementos de 
+    lista <li> que estão dentro de elementos com a classe "brands-list".*/
+    display: inline;
+    /* Define que os elementos de lista <li> devem ser exibidos 
+    como elementos em linha. Isso significa que eles não começarão em uma nova linha, 
+    e sim ficarão lado a lado, caso haja espaço suficiente.*/
+}
+
+section .container {
+    display: flex;
+    /* Define o contêiner com a classe "container" como um contêiner 
+    flexível. Isso permite que seus filhos se comportem como itens flexíveis.*/
+    align-items: flex-start;
+    /*Alinha os itens filhos verticalmente no início do 
+    contêiner flexível. Isso significa que os itens terão suas bordas superiores 
+    alinhadas.*/
+    justify-content: space-between;
+    /* Distribui o espaço disponível ao longo do eixo principal (horizontal, no caso do ,
+    layout flexível) de modo que o espaço seja distribuído uniformemente entre os itens. 
+    Isso coloca o primeiro item no início do contêiner e o último item no final, deixando um espaço entre os itens.*/
+}
+
+section {
+    /*Estilo para a seção (section):*/
+    padding: 24px 0;
+    /*Define um espaçamento interno de 24 pixels no topo e na parte inferior da seção. O valor 0 nas 
+    laterais implica que não há espaçamento à esquerda ou à direita.*/
+    color: #182C61;
+}
+
+section h2 {
+    /*Estilo para os títulos de segundo nível (h2) dentro da seção:*/
+    margin-bottom: 16px;
+    /*Adiciona uma margem na parte inferior dos títulos <h2> dentro da seção, criando um espaçamento 
+    vertical de 16 pixels entre o título e o conteúdo seguinte.*/
+    /*adicionando cor aos titulos <h2> dentro da seção*/
+}
+
+section p {
+    /*Estilo para os parágrafos (p) dentro da seção:*/
+    margin-bottom: 8px;
+    /*Adiciona uma margem na parte inferior dos parágrafos <p> dentro da seção, criando um espaçamento 
+    vertical de 8 pixels entre os parágrafos.*/
+}
+
+.store-front {
+    /*Estilizando o container da classe .store-front<img>*/
+    margin-right: 32px;
+    /*uma margem de 32 pixels à direita. Essa margem cria um espaço vazio à direita 
+    do elemento, afetando seu posicionamento em relação aos elementos vizinhos.*/
+}
+
+.social-links img{
+    height: 24px; /*altura*/
+}
+
+.social-links li{
+    display: inline; /*colonando os elementos em uma mesma linha horizontal*/
+    margin-right: 10px; /*adicionando espaçamento entre os elementos*/
+}
+
+.social-links li a{
+    text-decoration: none;/*retirando o undeline dos links*/
+}
+
+#contact .container{/*estilizando a area de contatos do site*/
+    display: block; /*Ocupa toda a largura disponível.
+    Inicia em uma nova linha e empurra elementos subsequentes para a próxima linha.
+    A altura e largura podem ser especificadas.*/
+}
+
+.contact-methods{ 
+    display: flex;
+    justify-content: space-between; /*alinhando os itens de forma horizontal de forma igualitaria*/
+}
+
+form input,
+form textarea,
+form button{/*estilizando o formulário e textarea*/
+    display: block; /*Ocupa toda a largura disponível.
+    Inicia em uma nova linha e empurra elementos subsequentes para a próxima linha.
+    A altura e largura podem ser especificadas.*/
+    width: 320px; /*Largura*/
+    margin-bottom: 10px; /*margem inferior*/
+    margin-top: 10px; /*margem superior*/
+    padding: 8px; /*espaçamento interno*/
+}
+
+form textarea{
+    resize: none; /*retirando opção de aumentar ou diminuir o elemento*/
+    height: 100px;
+}
+
+section h3{
+    margin-bottom: 8px; /*adicionando espaçamento de 10px da margem inferior do título ao elemento*/
+}
+
+form button{
+    background-color: #182C61; /*adicionando cor de fundo ao botão*/
+    color: #ecf0f1; /*adicionando cor ao texto*/
+    border: none; /*retirando a borda lateral do elemento*/
+    cursor: pointer; /*adicionando mãozinha ao estar com mouse no botão*/
+}
+
+form button:hover{ /*hover é usada para selecionar e estilizar elementos quando o usuário passa o mouse sobre eles.*/
+    background-color: #2d4485; /*cor do botão que aparecerá quando usuario passar o mouse sobre o mesmo*/
+}
+
+input:focus, textarea:focus{
+    outline-color: #182C61; /*Mudando a cor da borda dos elementos <input> e <textarea>*/
+}
+
+footer{
+    background-color: #182C61;
+    color: #ecf0f1;
+    padding: 16px 0;
+}
